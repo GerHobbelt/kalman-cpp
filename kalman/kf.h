@@ -25,7 +25,11 @@
 #define ARMA_USE_LAPACK // This definition must be before the include to the armadillo
 
 
+#ifndef _USE_MATH_DEFINES
 #define _USE_MATH_DEFINES
+#endif
+
+#define ARMA_DONT_PRINT_FAST_MATH_WARNING
 
 #include <math.h>
 
