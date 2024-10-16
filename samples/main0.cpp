@@ -12,8 +12,12 @@
 
 using namespace arma;
 
-int
-main()
+#if defined(BUILD_MONOLITHIC)
+#define main   kalman_main0_example_main
+#endif
+
+extern "C"
+int main(void)
 {
     std::cout << "*** smoke test start" << std::endl;
 

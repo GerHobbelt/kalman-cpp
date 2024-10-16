@@ -14,11 +14,15 @@
 
 #include "kf.h"
 
+#if defined(BUILD_MONOLITHIC)
+#define main   kalman_main2_example_main
+#endif
 
-int main(int argc, char** argv)
+extern "C"
+int main(int argc, const char** argv)
   {
     /* 
-     * Log the result into a tab delimitted file, later we can open 
+     * Log the result into a tab delimited file, later we can open 
      * it with Matlab. Use: plot_data2.m to plot the results.
      */
     ofstream log_file;

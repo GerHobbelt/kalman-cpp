@@ -14,6 +14,8 @@
 
 #include "ekf.h"
 
+namespace {
+
 /// @cond DEV
 /*
  * Class EKF needs to be derived, two virtual functions are provided in 
@@ -36,12 +38,19 @@ public:
 };
 /// @endcond
 
+}
+
 /////////////////////////////////////////////////////////////////////////////
 
-int main(int argc, char** argv)
+#if defined(BUILD_MONOLITHIC)
+#define main   kalman_main5_example_main
+#endif
+
+extern "C"
+int main(int argc, const char** argv)
 {
   /* 
-   * Log the result into a tab delimitted file, later we can open 
+   * Log the result into a tab delimited file, later we can open 
    * it with Matlab. Use: plot_data5.m to plot the results.
    */
   ofstream log_file;

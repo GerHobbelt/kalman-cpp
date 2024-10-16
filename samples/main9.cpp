@@ -10,6 +10,7 @@
 #include "fx.h"
 
 
+static
 colvec foo(colvec &x, colvec &a)
 {
     colvec ret(1);
@@ -20,7 +21,12 @@ colvec foo(colvec &x, colvec &a)
 
 /////////////////////////////////////////////////////////////////////////////
 
-int main(int argc, char** argv)
+#if defined(BUILD_MONOLITHIC)
+#define main   kalman_main9_example_main
+#endif
+
+extern "C"
+int main(int argc, const char** argv)
 {
     FX f(&foo);
     colvec x(1);
