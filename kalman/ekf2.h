@@ -52,7 +52,7 @@ public:
     /*!
      * \brief Destructur, nothing happens here.
      */
-    ~EKF2();
+    virtual ~EKF2();
 
     /*!
      * \brief Tell me how many states and outputs you have!

@@ -57,7 +57,7 @@ public:
   /*!
    * \brief Destructur, nothing happens here.
    */
-  ~UKF();
+  virtual ~UKF();
   
   /*!
    * \brief Tell me how many states and outputs you have!
